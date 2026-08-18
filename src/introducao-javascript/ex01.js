@@ -11,3 +11,4 @@ console.log(nome);
 console.log(profissao);
 console.log(cidade);
 console.log(nome + " residente de " + cidade + " trabalha como "+ profissao);
+console.log(`${nome} residente de ${cidade} trabalha como ${profissao}`);
