@@ -1,9 +1,11 @@
-let nomeAluno = prompt("Digite seu nome: ");
-let nota1 = prompt("Digite sua primeira nota: ");
-let nota2 = prompt("Digite sua segunda nota: ");
-let nota3 = prompt("Digite sua terceira nota: ");
-let nota4 = prompt("Digite sua quarta nota: ");
-let frequencia = prompt("Digite sua porcentagem de frequencia: ");
+const readline = require("readline-sync");
+
+let nomeAluno = readline.question("Digite seu nome: ");
+let nota1 = readline.question("Digite sua primeira nota: ");
+let nota2 = readline.question("Digite sua segunda nota: ");
+let nota3 = readline.question("Digite sua terceira nota: ");
+let nota4 = readline.question("Digite sua quarta nota: ");
+let frequencia = readline.question("Digite sua porcentagem de frequencia: ");
 let media = (nota1 + nota2 + nota3 + nota4) / 4;
 let maiorNota;
 let menorNota;
