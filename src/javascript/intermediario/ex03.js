@@ -5,10 +5,14 @@ while(true){
     if (resposta === "false" ) {
         console.log("Finalizando compra!");
         break
+    } else if(resposta === "true") {
+        for (i = 1; i > 0; i++){
+            let nomeProduto = readline.question("Nome do produto: ");
+            let precoProduto = Number(readline.question("Valor do produto: "));
+            let qtdeProduto = Number(readline.questionInt("Quantidade do produtos: "));  
+        }
+         
     } else {
-        let nomeProduto = readline.question("Nome do produto: ");
-        let precoProduto = Number(readline.question("Valor do produto: "));
-        let qtdeProduto = Number(readline.questionInt("Quantidade do produtos: "));   
-        
+        console.log("Resposta errada!");
     }
 }
