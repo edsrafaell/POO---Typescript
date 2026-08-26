@@ -10,7 +10,7 @@ function matouInimigo(){
 }
 
 function pegouItem(){
-    pontos += 100;
+    pontos += 50;
     console.log("Parabens! Voce pegou um item\n+50 pontos");
 }
 
@@ -18,6 +18,13 @@ function perdeuVida(){
     pontos -= 200;
     vidas -= 1;
     console.log(`OPS! Voce perdeu uma vida. Ainda restam ${vidas}\n -200 pontos`);
+    if (pontos < 0){
+        pontos = 0;
+    }
+    if (vidas == 0){
+        console.log("GAME OVER!");
+        pontos = 0;
+    }
 }
 
 function matouChefao(){
@@ -25,9 +32,32 @@ function matouChefao(){
     console.log("PARABENS! VOCE MATOU O CHEFAO \n+1000 pontos");
 }
 
-matouInimigo();
-pegouItem();
-perdeuVida();
-matouChefao();
-perdeuVida();
-console.log(`PONTOS: ${pontos} \n VIDAS: ${vidas}`);
+function processarEventos(evento){
+    switch (evento){
+        case "MATOU_INIMIGO":
+            matouInimigo();
+            break;
+        
+        case "DERROTOU_CHEFAO":
+            matouChefao();
+            break;
+        
+        case "PEGOU_ITEM":
+            pegouItem();
+            break;
+        
+        case "PERDEU_VIDA":
+            perdeuVida();
+            break;
+        
+        default:
+            console.log("Evento inválido!");
+    }
+}
+
+processarEventos("MATOU_INIMIGO");
+processarEventos("PEGOU_ITEM");
+processarEventos("PERDEU_VIDA");
+
+console.log(`PONTOS: ${pontos}`);
+console.log(`VIDAS: ${vidas}`);
