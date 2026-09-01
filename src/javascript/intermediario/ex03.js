@@ -51,7 +51,7 @@ function processarEventos(evento){
             break;
         
         default:
-            console.log("Evento inválido!");
+            console.log("Evento tinválido!");
     }
 }
 
